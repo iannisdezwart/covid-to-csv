@@ -18,7 +18,7 @@ const generateCountryCSV = (
 		const date = new Date(day.date)
 		const formattedDate = `${ date.getFullYear() }-${ (date.getMonth() + 1).toString().padStart(2, '0') }-${ (date.getDate() + 1).toString().padStart(2, '0') }`
 
-		csvData += `${ formattedDate };${ day.confirmed };${ day.deaths };${ day.recovered }\n`
+		csvData += `"${ formattedDate }";${ day.confirmed };${ day.deaths };${ day.recovered }\n`
 	}
 
 	const file = new File([ csvData ], countryName + '.csv', { type: 'text/csv' })

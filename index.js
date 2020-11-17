@@ -5,7 +5,7 @@ var generateCountryCSV = function (countryName) {
         var day = _a[_i];
         var date = new Date(day.date);
         var formattedDate = date.getFullYear() + "-" + (date.getMonth() + 1).toString().padStart(2, '0') + "-" + (date.getDate() + 1).toString().padStart(2, '0');
-        csvData += formattedDate + ";" + day.confirmed + ";" + day.deaths + ";" + day.recovered + "\n";
+        csvData += "\"" + formattedDate + "\";" + day.confirmed + ";" + day.deaths + ";" + day.recovered + "\n";
     }
     var file = new File([csvData], countryName + '.csv', { type: 'text/csv' });
     var downloadButton = document.createElement('a');
